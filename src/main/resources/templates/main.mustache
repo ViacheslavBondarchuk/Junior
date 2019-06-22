@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>My first REST service</title>
+    <meta http-equiv="Content-type" content="text/html" ; charset="UTF-8"/>
+</head>
+<body>
+<form method="post">
+    <input type="text" placeholder="Введите имя" name="firstName"/>
+    <input type="text" placeholder="Введите фамилию" name="lastName"/>
+    <input type="text" placeholder="Введите эл.почту" name="email"/>
+    <input type="text" placeholder="Введите номер телефона" name="phoneNumber"/>
+    <input type="text" placeholder="Введите имя оператора" name="operatorName"/>
+    <button type="submit">Добавить</button>
+
+</form>
+<br>
+<br>
+<div align="left">Список контактов</div>
+{{#Contacts}}
+    <div>
+        <b>{{id}}</b>
+        <span>{{firstName}}</span>
+        <span>{{lastName}}</span>
+        <span>{{email}}</span>
+    </div>
+{{/Contacts}}
+<br>
+<br>
+<div>Список телефонов</div>
+{{#Phones}}
+    <div>
+        <b>{{id}}</b>
+        <span>{{number}}</span>
+        <span>{{operatorName}}</span>
+    </div>
+{{/Phones}}
+</body>
+</html>
