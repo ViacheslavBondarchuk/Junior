@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Phones</title>
+</head>
+<body>
+<h1 align="center">Phones</h1>
+<table align="center">
+    <tr>
+        <th>id</th>
+        <th>Number</th>
+        <th>Operator</th>
+        <th>Contact id</th>
+    </tr>
+    {{#Phones}}
+        <tr>
+            <td>{{id}}</td>
+            <td>{{number}}</td>
+            <td>{{operatorName}}</td>
+            <td>{{contact.id}}</td>
+    {{/Phones}}
+</table>
+<br>
+<br>
+<div align="center"> Add new phone</div>
+<br>
+<form method="post">
+    <input type="text" placeholder="Введите телефон" name="number">
+    <input type="text" placeholder="Введите оператора" name="operatorName">
+    <input type="text" placeholder="e-mail" name="email">
+
+
+    <button type="submit">Add</button>
+</form>
+<br>
+<br>
+<footer>
+    <a href="/">Main</a>
+    <a href="/contacts">Contacts</a>
+    <a href="/phones">Phones</a>
+</footer>
+</body>
+</html>

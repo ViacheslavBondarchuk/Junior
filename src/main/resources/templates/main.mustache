@@ -1,39 +1,49 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>My first REST service</title>
-    <meta http-equiv="Content-type" content="text/html" ; charset="UTF-8"/>
+    <title>Rest Service</title>
 </head>
 <body>
-<form method="post">
-    <input type="text" placeholder="Введите имя" name="firstName"/>
-    <input type="text" placeholder="Введите фамилию" name="lastName"/>
-    <input type="text" placeholder="Введите эл.почту" name="email"/>
-    <input type="text" placeholder="Введите номер телефона" name="phoneNumber"/>
-    <input type="text" placeholder="Введите имя оператора" name="operatorName"/>
-    <button type="submit">Добавить</button>
-
-</form>
-<br>
-<br>
-<div align="left">Список контактов</div>
+<h1 align="center">Contact-Book</h1>
+<div align="center">Контакты</div>
+<table align="center">
+    <tr>
+        <th>id</th>
+        <th>Name</th>
+        <th>Last name</th>
+        <th>E-Mail</th>
+    </tr>
 {{#Contacts}}
-    <div>
-        <b>{{id}}</b>
-        <span>{{firstName}}</span>
-        <span>{{lastName}}</span>
-        <span>{{email}}</span>
-    </div>
+    <tr>
+        <td>{{id}}</td>
+        <td>{{firstName}}</td>
+        <td>{{lastName}}</td>
+        <td>{{email}}</td>
+    </tr>
 {{/Contacts}}
+</table>
 <br>
-<br>
-<div>Список телефонов</div>
-{{#Phones}}
-    <div>
-        <b>{{id}}</b>
-        <span>{{number}}</span>
-        <span>{{operatorName}}</span>
-    </div>
-{{/Phones}}
+<table align="center">
+    <tr>
+        <th>id</th>
+        <th>Number</th>
+        <th>Operator</th>
+        <th>Contact id</th>
+
+    </tr>
+    {{#Phones}}
+        <tr>
+            <td>{{id}}</td>
+            <td>{{number}}</td>
+            <td>{{operatorName}}</td>
+            <td>{{contact.id}}</td>
+        </tr>
+    {{/Phones}}
+</table>
+<footer>
+    <a href="/">Main</a>
+    <a href="/contacts">Contacts</a>
+    <a href="/phones">Phones</a>
+</footer>
 </body>
 </html>
